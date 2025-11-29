@@ -49,6 +49,7 @@
           {
             "group": "Payment Methods",
             "pages": [
+              "payment-info",
               "paypal",
               "cards",
               "upi",
