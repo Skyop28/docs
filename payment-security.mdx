@@ -7,141 +7,185 @@ Payment security is fundamental to Right Spot. This page explains in detail how 
 
 ## The key point: We never see your card details
 
-When you enter your credit card information on Right Spot, that information goes directly to our payment processor—not to us. This is not just a policy; it is how the system is architecturally designed.
+When you pay with a credit or debit card on Right Spot, you are redirected to PayPal's secure checkout page. Your card information is entered directly on PayPal's website—not on ours. This is not just a policy; it is how the entire payment system is designed.
 
-Here is what happens when you pay with a card:
+Here is what happens when you pay with a card through PayPal:
 
-1. You enter your card number, expiration, and CVC into the payment form
-2. This information is encrypted in your browser
-3. The encrypted data is sent directly to Stripe (our payment processor)
-4. Stripe processes the payment and sends us only a confirmation token
-5. We receive confirmation that payment succeeded, but never the actual card details
+1. You click to pay and are redirected to PayPal's official website (paypal.com)
+2. You enter your card details directly into PayPal's secure form
+3. PayPal encrypts and processes the payment with your card issuer
+4. PayPal sends Right Spot only a confirmation that payment was successful
+5. You are redirected back to Right Spot to see your order confirmation
 
-**At no point does your full card number, expiration date, or security code pass through Right Spot servers.**
+**At no point does your card number, expiration date, or security code pass through Right Spot servers. We never see it. We cannot see it. The system does not allow it.**
 
-[IMAGE PLACEHOLDER: Payment flow diagram showing data going directly to Stripe]
+[IMAGE PLACEHOLDER: Payment flow diagram showing user going to PayPal, entering card there, and Right Spot receiving only confirmation]
 
-## Why this architecture matters
+## How PayPal protects your card information
 
-This design provides several security benefits:
+PayPal is one of the world's largest payment processors, handling over $1.36 trillion in payment volume annually. When you pay through PayPal—whether using your PayPal balance or a card—your financial information stays with PayPal.
 
-**Reduced risk**: Since we never handle card data, there is no card data to steal even in the unlikely event of a security breach on our systems.
+### What PayPal's merchant protection means for you
 
-**Industry compliance**: This architecture meets PCI DSS (Payment Card Industry Data Security Standard) requirements by minimizing the scope of systems that handle cardholder data.
+According to PayPal's official documentation, merchants (like Right Spot) receive only:
 
-**Trusted processing**: Your payment is processed by Stripe, a company that handles hundreds of billions of dollars in transactions annually and invests heavily in security infrastructure.
+- A transaction ID confirming the payment
+- The payment amount
+- Your PayPal email address (if you used a PayPal account)
+- Basic transaction status information
+
+Merchants do not receive:
+
+- Your full card number
+- Your card expiration date
+- Your card security code (CVV/CVC)
+- Your billing address details
+- Your bank account information
+- Your PayPal password
+
+This is by design. PayPal operates as what the payment industry calls a "payment gateway" or "payment facilitator." Their entire business model depends on keeping your financial information secure and never exposing it to merchants.
+
+## Official documentation and proof
+
+PayPal publishes extensive documentation about their security practices. Here are official resources you can review:
+
+**PayPal Security Center**: [https://www.paypal.com/us/security](https://www.paypal.com/us/security) - PayPal's official security information page explaining their protection measures.
+
+**PayPal Privacy Policy**: [https://www.paypal.com/privacy-center](https://www.paypal.com/privacy-center) - Details what information PayPal shares with merchants (which does not include your card details).
+
+**How PayPal Works for Buyers**: [https://www.paypal.com/us/webapps/mpp/how-paypal-works](https://www.paypal.com/us/webapps/mpp/how-paypal-works) - Official explanation of how your information stays protected when you pay.
+
+From PayPal's security documentation:
+
+> "When you pay with PayPal, your financial information is never shared with the seller."
+
+This statement comes directly from PayPal and applies to all transactions, including card payments made through PayPal checkout.
+
+## Technical explanation: Why we cannot access your card
+
+The payment flow is designed at a technical level to prevent merchants from accessing card data:
+
+**Redirect-based checkout**: When you click "Pay with PayPal," your browser navigates to paypal.com. You are no longer on our website. The form you fill out is PayPal's form, hosted on PayPal's servers, secured by PayPal's SSL certificate.
+
+**No card data transmission to merchants**: PayPal's API for merchants uses tokens and transaction IDs. There is no API endpoint that would allow us to request your card details, even if we wanted to. PayPal simply does not offer that capability.
+
+**PCI DSS compliance architecture**: PayPal is PCI DSS Level 1 certified—the highest level of payment card industry security certification. Part of how they maintain this certification is by architecturally preventing card data from reaching merchants.
 
 ## How each payment method protects you
 
-### Credit and debit cards
+### Credit and debit cards (via PayPal)
 
-Cards are processed through Stripe, which provides:
+When you pay with a card through PayPal:
 
-- End-to-end encryption from your browser to Stripe
-- Fraud detection and prevention systems
-- 3D Secure support for additional authentication
-- PCI DSS Level 1 certification (the highest level)
+- You enter card details on PayPal's secure website
+- PayPal encrypts and processes the payment
+- Right Spot receives only a transaction confirmation
+- Your card details never touch our systems
 
-What we receive: Transaction confirmation, last four digits of card, card brand, payment amount.
+**What we receive**: Transaction ID, payment amount, confirmation of success.
 
-What we never receive: Full card number, expiration date, CVV.
+**What we never receive**: Card number, expiration date, CVV, billing address.
 
-### PayPal
+### PayPal balance
 
-PayPal payments keep your financial information entirely within PayPal:
+When you pay with your PayPal balance:
 
 - You authorize payment directly on PayPal's website
-- Your PayPal password and linked accounts stay with PayPal
-- We receive only a transaction ID confirming payment
+- Your PayPal credentials never leave PayPal
+- We receive only confirmation of payment
 
-What we receive: Transaction ID, payment amount, your PayPal email.
+**What we receive**: Transaction ID, payment amount, your PayPal email.
 
-What we never receive: PayPal password, linked card/bank details.
+**What we never receive**: PayPal password, linked account details.
 
-### UPI
+### UPI (India)
 
 UPI payments are processed through Cashfree:
 
-- You authorize in your own UPI app using your PIN
-- Your UPI PIN and bank credentials never leave your device
-- We receive only confirmation of successful transfer
+- You authorize in your UPI app using your PIN
+- Your UPI PIN never leaves your device
+- We receive only confirmation of the transfer
 
-What we receive: Transaction reference, payment amount.
+**What we receive**: Transaction reference, payment amount.
 
-What we never receive: UPI PIN, bank account details.
+**What we never receive**: UPI PIN, bank account details.
 
-### Cryptocurrency
+### Litecoin
 
-Cryptocurrency payments involve blockchain transactions:
+Cryptocurrency payments work on the blockchain:
 
-- You send from your own wallet using your private keys
+- You send LTC from your wallet using your private keys
 - Your wallet credentials never leave your device
-- We receive only the incoming transaction on the blockchain
+- We see only the incoming transaction
 
-What we receive: Transaction hash, wallet address used, payment amount.
+**What we receive**: Transaction hash, payment amount.
 
-What we never receive: Private keys, wallet passwords, seed phrases.
+**What we never receive**: Private keys, wallet passwords.
 
-## Security measures we implement
+## What this means in practice
 
-Beyond the architectural protections, Right Spot implements additional security measures:
+### If Right Spot were ever breached
 
-### Encryption everywhere
+In the hypothetical scenario of a security breach at Right Spot, your payment credentials would remain completely safe because:
 
-All connections to Right Spot use HTTPS with modern TLS encryption. This protects all data in transit between your browser and our servers.
+- We do not have your card numbers—PayPal does
+- We do not have your PayPal password—PayPal does
+- We do not have your UPI PIN—your bank does
+- We do not have your crypto keys—your wallet does
 
-### Secure sessions
+The most sensitive information on our systems is your email address and Discord username. Your financial data simply is not here to steal.
 
-Your login session is protected with secure, HttpOnly cookies that cannot be accessed by JavaScript. Sessions expire after periods of inactivity.
+### You can verify this yourself
 
-### Fraud monitoring
+When you reach the payment step:
 
-We monitor for suspicious activity patterns that might indicate fraud or account compromise. Unusual activity may trigger additional verification steps.
+1. Look at your browser's address bar—you will see "paypal.com," not our domain
+2. The SSL certificate (padlock icon) shows PayPal's certificate, not ours
+3. Any card form you fill out is on PayPal's page
 
-### Regular security reviews
+This is not a claim you need to take on faith. You can observe it directly every time you make a payment.
 
-We regularly review our security practices and update them based on current best practices and emerging threats.
+## Additional security measures
 
-## What if there was a breach?
+Beyond payment architecture, Right Spot implements:
 
-In the hypothetical scenario of a security breach at Right Spot, your payment credentials would remain safe because:
+**HTTPS everywhere**: All connections to our site use modern TLS encryption.
 
-- We do not store card numbers, so there are none to steal
-- PayPal credentials are never on our systems
-- UPI PINs are never transmitted to us
-- Crypto private keys never leave your wallet
+**Secure session handling**: Login sessions use HttpOnly cookies that cannot be accessed by JavaScript.
 
-The most sensitive information we hold is your email address and Discord username. While we take protecting all data seriously, the financial information most attractive to attackers simply does not exist in our systems.
+**Fraud monitoring**: We watch for suspicious activity patterns.
 
-## Verifying security yourself
+**Discord OAuth security**: We never see your Discord password—Discord handles authentication.
 
-You can verify these security measures:
-
-**Check the payment form**: When entering card details, inspect the form. It is an iframe from Stripe, not a form on our domain.
-
-**Review network traffic**: Using browser developer tools, you can see that card details are sent to Stripe's servers, not ours.
-
-**Check for HTTPS**: Ensure the padlock icon appears in your browser when using Right Spot.
-
-## Questions about payment security
+## Common questions
 
 <AccordionGroup>
   <Accordion title="Do you store my card for future purchases?">
-    No. We do not store card details at all. Each purchase requires entering your card information again. This is intentional—no stored cards means no card data at risk.
+    No. We do not store card details because we never receive them. Each purchase requires entering your card information on PayPal again. This is by design—there is no card data on our end to store.
   </Accordion>
   
-  <Accordion title="Why do receipts show my last four card digits?">
-    Stripe provides us with the last four digits for customer reference on receipts. This is standard practice and does not compromise security—the last four digits alone cannot be used to make purchases.
+  <Accordion title="Why can't you just show me a card form on your site?">
+    Displaying a card form on our site would require us to handle card data, which would create security risks and compliance obligations. By redirecting to PayPal, your card data stays in PayPal's secure environment. This is the safer approach.
   </Accordion>
   
-  <Accordion title="Is it safe to use my debit card?">
-    Yes. Debit cards receive the same protections as credit cards through Stripe. However, some users prefer credit cards because they offer additional buyer protection from the card issuer.
+  <Accordion title="Is PayPal safe to use?">
+    PayPal has been processing payments since 1998 and handles transactions for over 400 million active accounts worldwide. They are PCI DSS Level 1 certified and invest heavily in security. They also offer buyer protection if something goes wrong with a purchase.
   </Accordion>
   
-  <Accordion title="What is PCI DSS and why does it matter?">
-    PCI DSS (Payment Card Industry Data Security Standard) is a set of security requirements for organizations handling card payments. Stripe is PCI DSS Level 1 certified, meaning they meet the highest security standards. By using Stripe and never handling card data ourselves, we minimize PCI scope while ensuring your payments are processed securely.
+  <Accordion title="What if I don't have a PayPal account?">
+    You do not need a PayPal account to pay with a card. On PayPal's checkout page, there is an option to pay with a debit or credit card without creating an account. Your card is still processed securely through PayPal.
+  </Accordion>
+  
+  <Accordion title="Can I see proof that you don't receive card data?">
+    Yes. When you check out, open your browser's developer tools (F12) and go to the Network tab. You will see that when you enter card details, the data is sent to paypal.com domains, not to our servers. The only data we receive from PayPal is a transaction confirmation.
   </Accordion>
 </AccordionGroup>
+
+## Summary
+
+Your payment security on Right Spot is guaranteed by the fact that we use PayPal as our payment gateway. Your card information goes directly to PayPal, is processed by PayPal, and stays with PayPal. We receive only confirmation that you paid—nothing more.
+
+This is not a promise or a policy. It is how the payment system is built. There is no mechanism for us to access your card details even if we wanted to.
 
 ---
 
