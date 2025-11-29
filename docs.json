@@ -12,7 +12,59 @@
     "tabs": [
       {
         "tab": "Guides",
-        "groups": []
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "about",
+              "signup",
+              "why-we-require-it"
+            ]
+          },
+          {
+            "group": "Dashboard",
+            "pages": [
+              "overview",
+              "orders",
+              "trends",
+              "settings",
+              "notifications"
+            ]
+          },
+          {
+            "group": "How to order",
+            "pages": [
+              "pre-orders",
+              "how-to-order"
+            ]
+          },
+          {
+            "group": "Order Tracking",
+            "pages": [
+              "view-order",
+              "statuses"
+            ]
+          },
+          {
+            "group": "Payment Methods",
+            "pages": [
+              "paypal",
+              "cards",
+              "upi",
+              "crypto",
+              "payments-overview"
+            ]
+          },
+          {
+            "group": "Security",
+            "pages": [
+              "data-collection",
+              "data-usage",
+              "payment-security"
+            ]
+          }
+        ]
       }
     ],
     "global": {
