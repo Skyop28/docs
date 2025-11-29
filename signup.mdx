@@ -10,39 +10,37 @@ Right Spot uses Discord for authentication. This means you do not need to create
 <Steps>
   <Step title="Navigate to the sign-in page">
     Click the **Sign In** button in the top navigation bar, or go directly to the authentication page from the homepage.
+    
+    [IMAGE PLACEHOLDER: Homepage with Sign In button highlighted]
   </Step>
   <Step title="Authorize with Discord">
-    You will be redirected to Discord's authorization page. Review the permissions requested and click **Authorize** to continue.
+    You will be redirected to Discord's official authorization page. This page shows what information Right Spot is requesting access to.
+    
+    Review the permissions and click **Authorize** to continue.
     
     [IMAGE PLACEHOLDER: Discord authorization screen]
   </Step>
   <Step title="Complete registration">
     After authorization, you will be redirected back to Right Spot. Your account is now created and you can access your dashboard.
+    
+    [IMAGE PLACEHOLDER: Dashboard after successful login]
   </Step>
 </Steps>
 
-## Why we use Discord authentication
-
-There are several reasons we chose Discord as our authentication method:
-
-**Direct connection to your gaming identity**: Since Poketwo operates within Discord, authenticating with Discord ensures we can associate your purchases with the correct account. This helps with order verification and customer support.
-
-**No additional passwords to remember**: You already have a Discord account if you use Poketwo. Using Discord login means one less password to manage and no risk of forgetting credentials for yet another service.
-
-**Enhanced security**: Discord handles the authentication process, including two-factor authentication if you have it enabled on your Discord account. This means your login security benefits from Discord's infrastructure.
-
-**Faster support resolution**: When you contact support, we can quickly verify your identity and locate your orders using your Discord information. This speeds up the resolution process for any issues.
-
 ## What information we receive
 
-When you authorize Right Spot to access your Discord account, we receive:
+When you authorize Right Spot, Discord shares only basic profile information:
 
-- Your Discord username and discriminator
+- Your Discord username
 - Your Discord user ID
-- Your email address (used for order confirmations and support)
-- Your profile picture (displayed in your dashboard)
+- Your email address (for order confirmations)
+- Your profile picture
 
-We do not receive access to your Discord messages, servers, or any other private information. The authorization is limited to basic profile information only.
+We do not receive access to your Discord messages, servers, friends list, or any private information.
+
+<Note>
+Concerned about authorizing Discord? Read [Why we require Discord](/getting-started/why-discord) for a detailed explanation of how OAuth works and why your account remains completely secure.
+</Note>
 
 ## Logging in to an existing account
 
