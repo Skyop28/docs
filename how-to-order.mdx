@@ -26,144 +26,185 @@ The ordering process consists of six steps:
 5. Complete payment
 6. Receive confirmation
 
-<Steps>
-  <Step title="Select quantity">
-    Navigate to the purchase page by clicking **Buy Pokecoins** in the navigation bar or from your dashboard.
-    
-    [IMAGE PLACEHOLDER: Quantity selection interface]
-    
-    The quantity selector allows you to specify how many Pokecoins you want to purchase. You can:
-    
-    - Use the slider to adjust the amount
-    - Enter a specific number directly
-    - Select from preset amounts for quick ordering
-    
-    As you adjust the quantity, the price updates in real-time. The display shows:
-    
-    - Price per million Pokecoins at your selected quantity
-    - Total cost before payment processing
-    - Any bulk discounts applied to your order
-    
-    <Note>
-    Bulk discounts are applied automatically. Larger orders receive better per-unit pricing—you can see the discount percentage displayed as you increase quantity.
-    </Note>
-    
-    The page also displays current stock availability. If your requested amount exceeds available stock, the order becomes a [pre-order](/ordering/pre-orders).
-    
-    Click **Continue** when you have selected your desired quantity.
-  </Step>
-  
-  <Step title="Enter market ID">
-    Your market ID is how Pokecoins are delivered to your Poketwo account. This step ensures the delivery goes to the correct destination.
-    
-    [IMAGE PLACEHOLDER: Market ID entry screen]
-    
-    ### Finding your market ID
-    
-    To find your market ID in Discord:
-    
-    1. Open a server where Poketwo is active
-    2. Type `@Poketwo market info` or use the slash command `/market info`
-    3. Poketwo responds with your market information, including your market ID
-    4. Copy the 8-character market ID
-    
-    ### Entering your market ID
-    
-    Paste or type your market ID into the input field. The system validates the format automatically.
-    
-    <Warning>
-    Double-check your market ID before proceeding. Pokecoins sent to an incorrect market ID cannot be recovered. If you are unsure, verify the ID in Poketwo before continuing.
-    </Warning>
-    
-    Click **Continue** after entering a valid market ID.
-  </Step>
-  
-  <Step title="Review order summary">
-    The summary page displays all details of your order for final review before payment.
-    
-    [IMAGE PLACEHOLDER: Order summary screen]
-    
-    Review the following information:
-    
-    **Order details**
-    - Pokecoin amount
-    - Price per million
-    - Total cost
-    - Any discounts applied
-    
-    **Delivery information**
-    - Market ID where Pokecoins will be delivered
-    - Order type (instant or pre-order)
-    - Expected delivery time
-    
-    This is your last opportunity to make changes before payment. Use the back button to modify quantity or market ID if needed.
-    
-    Click **Continue** to proceed to payment method selection.
-  </Step>
-  
-  <Step title="Choose payment method">
-    Select how you want to pay for your order. Available payment methods include:
-    
-    [IMAGE PLACEHOLDER: Payment method selection]
-    
-    **PayPal**: Pay with your PayPal balance or linked cards. Widely available and supports buyer protection.
-    
-    **Credit/Debit Card**: Pay directly with Visa, Mastercard, American Express, or Discover cards. Processed securely through Stripe.
-    
-    **UPI**: Available for customers in India. Pay using any UPI-enabled app like Google Pay, PhonePe, or Paytm.
-    
-    **Cryptocurrency**: Pay with Bitcoin, Litecoin, or other supported cryptocurrencies.
-    
-    Select your preferred method and click **Continue** to proceed to the payment page.
-    
-    <Note>
-    Payment processing fees vary by method. The final amount including any fees is displayed before you confirm payment.
-    </Note>
-  </Step>
-  
-  <Step title="Complete payment">
-    The payment page displays instructions specific to your selected payment method.
-    
-    [IMAGE PLACEHOLDER: Payment completion screen]
-    
-    **For PayPal**: You are redirected to PayPal to authorize the payment. After authorization, you return to Right Spot automatically.
-    
-    **For Cards**: Enter your card details in the secure payment form. Your card information is processed by Stripe and never touches Right Spot servers.
-    
-    **For UPI**: Scan the QR code or use the UPI ID to pay through your UPI app. Payment confirmation is detected automatically.
-    
-    **For Crypto**: Send the exact amount to the provided wallet address. The page displays a QR code and address for your convenience.
-    
-    <Warning>
-    Do not close the payment page until you see confirmation. For crypto payments, ensure you send the exact amount specified—partial payments may not be credited automatically.
-    </Warning>
-  </Step>
-  
-  <Step title="Receive confirmation">
-    After successful payment, you are redirected to the confirmation page.
-    
-    [IMAGE PLACEHOLDER: Order confirmation screen]
-    
-    The confirmation page displays:
-    
-    - Order reference number
-    - Payment confirmation
-    - Delivery status
-    - Expected delivery time (for instant orders, this shows "Delivered" immediately in most cases)
-    
-    For instant orders, delivery typically occurs within seconds. The confirmation page updates automatically when delivery completes.
-    
-    You also receive:
-    
-    - An email confirmation with order details
-    - A dashboard notification
-    - The order appears in your Orders list
-    
-    <Check>
-    Your order is complete. Check your Poketwo market to verify receipt of your Pokecoins.
-    </Check>
-  </Step>
-</Steps>
+---
+
+## Step 1: Select quantity
+
+Navigate to the purchase page by clicking **Buy Pokecoins** in the navigation bar or from your dashboard.
+
+[IMAGE PLACEHOLDER: Full screenshot of the quantity selection page]
+
+### Using the quantity selector
+
+The quantity selector allows you to specify how many Pokecoins you want to purchase.
+
+You can adjust the amount using the slider, or enter a specific number directly in the input field. Preset amounts are also available for quick selection.
+
+[IMAGE PLACEHOLDER: Close-up of quantity slider and input field]
+
+### Understanding the pricing display
+
+As you adjust the quantity, the price updates in real-time. The display shows:
+
+- Price per million Pokecoins at your selected quantity
+- Total cost for your order
+- Any bulk discounts that have been applied
+
+<Note>
+Bulk discounts are applied automatically as you increase the quantity. The discount percentage is displayed so you can see exactly how much you are saving.
+</Note>
+
+### Stock availability
+
+The page displays current stock availability. If your requested amount exceeds available stock, the order becomes a [pre-order](/ordering/pre-orders) with a different delivery timeline.
+
+Click **Continue** when you have selected your desired quantity.
+
+---
+
+## Step 2: Enter market ID
+
+Your market ID is how Pokecoins are delivered to your Poketwo account. This step ensures the delivery goes to the correct destination.
+
+[IMAGE PLACEHOLDER: Full screenshot of the market ID entry page]
+
+### Finding your market ID
+
+To find your market ID in Discord:
+
+1. Open a server where Poketwo is active
+2. Type `@Poketwo market info` or use the slash command `/market info`
+3. Poketwo responds with your market information
+4. Look for your market ID—it is an 8-character code
+5. Copy the market ID
+
+[IMAGE PLACEHOLDER: Screenshot of Poketwo market info response in Discord showing where the market ID is located]
+
+### Entering your market ID
+
+Paste or type your market ID into the input field. The system validates the format automatically and shows a green checkmark when the format is correct.
+
+[IMAGE PLACEHOLDER: Market ID input field with validation indicator]
+
+<Warning>
+Double-check your market ID before proceeding. Pokecoins sent to an incorrect market ID cannot be recovered. If you are unsure, verify the ID in Poketwo before continuing.
+</Warning>
+
+Click **Continue** after entering a valid market ID.
+
+---
+
+## Step 3: Review order summary
+
+The summary page displays all details of your order for final review before payment.
+
+[IMAGE PLACEHOLDER: Full screenshot of the order summary page]
+
+### Order details section
+
+This section shows:
+
+- Pokecoin amount you are purchasing
+- Price per million Pokecoins
+- Total cost for the order
+- Any discounts that were applied
+
+[IMAGE PLACEHOLDER: Close-up of the order details card]
+
+### Delivery information section
+
+This section confirms:
+
+- The market ID where your Pokecoins will be delivered
+- Whether this is an instant order or a pre-order
+- Expected delivery time
+
+[IMAGE PLACEHOLDER: Close-up of the delivery information card]
+
+This is your last opportunity to make changes before payment. Use the back button to modify the quantity or market ID if needed.
+
+Click **Continue** to proceed to payment method selection.
+
+---
+
+## Step 4: Choose payment method
+
+Select how you want to pay for your order.
+
+[IMAGE PLACEHOLDER: Full screenshot of payment method selection page]
+
+### Available payment methods
+
+**PayPal**: Pay using your PayPal balance, linked bank account, or credit/debit card through PayPal. Available worldwide where PayPal operates.
+
+**UPI**: Available for customers in India. Pay using any UPI-enabled app such as Google Pay, PhonePe, Paytm, or others.
+
+**Cryptocurrency**: Pay with Litecoin (LTC). Requires a cryptocurrency wallet.
+
+[IMAGE PLACEHOLDER: Close-up of payment method options]
+
+Select your preferred method and click **Continue** to proceed to the payment page.
+
+---
+
+## Step 5: Complete payment
+
+The payment page displays instructions specific to your selected payment method.
+
+[IMAGE PLACEHOLDER: Full screenshot of the payment page - show one example like PayPal]
+
+### PayPal payments
+
+You are redirected to PayPal's website to authorize the payment. Log in to your PayPal account, review the payment details, and click Pay. After authorization, you are automatically returned to Right Spot.
+
+If you want to pay with a credit or debit card, you can do so through PayPal—select the card payment option on PayPal's checkout page.
+
+### UPI payments
+
+A QR code and UPI ID are displayed on the page. Open your UPI app, scan the QR code or enter the UPI ID, and authorize the payment. The page automatically detects when payment is received.
+
+### Cryptocurrency payments
+
+A wallet address and QR code are displayed. Send the exact Litecoin amount shown to the provided address. The page tracks your transaction and confirms when the required blockchain confirmations are received.
+
+<Warning>
+Do not close the payment page until you see confirmation. For crypto payments, ensure you send the exact amount specified—sending a different amount may delay processing.
+</Warning>
+
+---
+
+## Step 6: Receive confirmation
+
+After successful payment, you are redirected to the confirmation page.
+
+[IMAGE PLACEHOLDER: Full screenshot of the order confirmation page]
+
+### Confirmation details
+
+The confirmation page displays:
+
+- Your order reference number
+- Payment confirmation status
+- Delivery status
+- Timestamp of the order
+
+[IMAGE PLACEHOLDER: Close-up of confirmation details]
+
+For instant orders, delivery typically occurs within seconds. The confirmation page updates automatically when delivery completes, showing the exact time your Pokecoins were sent.
+
+### What you receive
+
+After a successful order, you receive:
+
+- An email confirmation with complete order details
+- A notification in your dashboard
+- The order appears in your Orders list for future reference
+
+<Check>
+Your order is complete. Check your Poketwo market using `@Poketwo market info` to verify receipt of your Pokecoins.
+</Check>
+
+---
 
 ## After placing your order
 
