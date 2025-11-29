@@ -56,7 +56,7 @@ We explicitly do not collect:
 - Discord passwords
 - Messages or content from your Discord account
 
-Payment credentials are handled entirely by our payment processors (Stripe, PayPal, Cashfree) and never touch Right Spot servers.
+Payment credentials are handled entirely by our payment processors (PayPal, Cashfree) and never touch Right Spot servers.
 
 ## Cookies and tracking
 
@@ -77,18 +77,13 @@ When you complete a payment, the payment processor shares limited information wi
 - Payment amount
 - General payment method type (card, PayPal, etc.)
 
-For card payments specifically, we may receive:
-- Last four digits of the card (for your reference on receipts)
-- Card brand (Visa, Mastercard, etc.)
-- Country of card issuance
-
-We never receive full card numbers or security codes.
+For card payments made through PayPal, we receive only the confirmation that payment was successful. PayPal does not share your card details with merchants.
 
 ## Third-party data sharing
 
 We do not sell your data to third parties. Information may be shared with:
 
-**Payment processors**: To process your payments (Stripe, PayPal, Cashfree).
+**Payment processors**: To process your payments (PayPal for cards and PayPal balance, Cashfree for UPI).
 
 **Email service providers**: To send transactional emails (order confirmations, etc.).
 
