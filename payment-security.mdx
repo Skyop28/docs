@@ -1,0 +1,148 @@
+---
+title: "Payment security"
+description: "How your payment information is protected and why we never have access to your card details"
+---
+
+Payment security is fundamental to Right Spot. This page explains in detail how your financial information is protected and why you can trust that your payment credentials are never exposed to us.
+
+## The key point: We never see your card details
+
+When you enter your credit card information on Right Spot, that information goes directly to our payment processor—not to us. This is not just a policy; it is how the system is architecturally designed.
+
+Here is what happens when you pay with a card:
+
+1. You enter your card number, expiration, and CVC into the payment form
+2. This information is encrypted in your browser
+3. The encrypted data is sent directly to Stripe (our payment processor)
+4. Stripe processes the payment and sends us only a confirmation token
+5. We receive confirmation that payment succeeded, but never the actual card details
+
+**At no point does your full card number, expiration date, or security code pass through Right Spot servers.**
+
+[IMAGE PLACEHOLDER: Payment flow diagram showing data going directly to Stripe]
+
+## Why this architecture matters
+
+This design provides several security benefits:
+
+**Reduced risk**: Since we never handle card data, there is no card data to steal even in the unlikely event of a security breach on our systems.
+
+**Industry compliance**: This architecture meets PCI DSS (Payment Card Industry Data Security Standard) requirements by minimizing the scope of systems that handle cardholder data.
+
+**Trusted processing**: Your payment is processed by Stripe, a company that handles hundreds of billions of dollars in transactions annually and invests heavily in security infrastructure.
+
+## How each payment method protects you
+
+### Credit and debit cards
+
+Cards are processed through Stripe, which provides:
+
+- End-to-end encryption from your browser to Stripe
+- Fraud detection and prevention systems
+- 3D Secure support for additional authentication
+- PCI DSS Level 1 certification (the highest level)
+
+What we receive: Transaction confirmation, last four digits of card, card brand, payment amount.
+
+What we never receive: Full card number, expiration date, CVV.
+
+### PayPal
+
+PayPal payments keep your financial information entirely within PayPal:
+
+- You authorize payment directly on PayPal's website
+- Your PayPal password and linked accounts stay with PayPal
+- We receive only a transaction ID confirming payment
+
+What we receive: Transaction ID, payment amount, your PayPal email.
+
+What we never receive: PayPal password, linked card/bank details.
+
+### UPI
+
+UPI payments are processed through Cashfree:
+
+- You authorize in your own UPI app using your PIN
+- Your UPI PIN and bank credentials never leave your device
+- We receive only confirmation of successful transfer
+
+What we receive: Transaction reference, payment amount.
+
+What we never receive: UPI PIN, bank account details.
+
+### Cryptocurrency
+
+Cryptocurrency payments involve blockchain transactions:
+
+- You send from your own wallet using your private keys
+- Your wallet credentials never leave your device
+- We receive only the incoming transaction on the blockchain
+
+What we receive: Transaction hash, wallet address used, payment amount.
+
+What we never receive: Private keys, wallet passwords, seed phrases.
+
+## Security measures we implement
+
+Beyond the architectural protections, Right Spot implements additional security measures:
+
+### Encryption everywhere
+
+All connections to Right Spot use HTTPS with modern TLS encryption. This protects all data in transit between your browser and our servers.
+
+### Secure sessions
+
+Your login session is protected with secure, HttpOnly cookies that cannot be accessed by JavaScript. Sessions expire after periods of inactivity.
+
+### Fraud monitoring
+
+We monitor for suspicious activity patterns that might indicate fraud or account compromise. Unusual activity may trigger additional verification steps.
+
+### Regular security reviews
+
+We regularly review our security practices and update them based on current best practices and emerging threats.
+
+## What if there was a breach?
+
+In the hypothetical scenario of a security breach at Right Spot, your payment credentials would remain safe because:
+
+- We do not store card numbers, so there are none to steal
+- PayPal credentials are never on our systems
+- UPI PINs are never transmitted to us
+- Crypto private keys never leave your wallet
+
+The most sensitive information we hold is your email address and Discord username. While we take protecting all data seriously, the financial information most attractive to attackers simply does not exist in our systems.
+
+## Verifying security yourself
+
+You can verify these security measures:
+
+**Check the payment form**: When entering card details, inspect the form. It is an iframe from Stripe, not a form on our domain.
+
+**Review network traffic**: Using browser developer tools, you can see that card details are sent to Stripe's servers, not ours.
+
+**Check for HTTPS**: Ensure the padlock icon appears in your browser when using Right Spot.
+
+## Questions about payment security
+
+<AccordionGroup>
+  <Accordion title="Do you store my card for future purchases?">
+    No. We do not store card details at all. Each purchase requires entering your card information again. This is intentional—no stored cards means no card data at risk.
+  </Accordion>
+  
+  <Accordion title="Why do receipts show my last four card digits?">
+    Stripe provides us with the last four digits for customer reference on receipts. This is standard practice and does not compromise security—the last four digits alone cannot be used to make purchases.
+  </Accordion>
+  
+  <Accordion title="Is it safe to use my debit card?">
+    Yes. Debit cards receive the same protections as credit cards through Stripe. However, some users prefer credit cards because they offer additional buyer protection from the card issuer.
+  </Accordion>
+  
+  <Accordion title="What is PCI DSS and why does it matter?">
+    PCI DSS (Payment Card Industry Data Security Standard) is a set of security requirements for organizations handling card payments. Stripe is PCI DSS Level 1 certified, meaning they meet the highest security standards. By using Stripe and never handling card data ourselves, we minimize PCI scope while ensuring your payments are processed securely.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+This concludes the security documentation. Return to [Documentation home](/introduction) or explore other sections using the sidebar navigation.

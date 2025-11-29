@@ -1,0 +1,148 @@
+---
+title: "Cryptocurrency"
+description: "Pay for your Pokecoins using Bitcoin, Litecoin, and other cryptocurrencies"
+---
+
+Right Spot accepts cryptocurrency payments, offering a decentralized payment option that does not require traditional banking infrastructure.
+
+## Supported cryptocurrencies
+
+- Bitcoin (BTC)
+- Litecoin (LTC)
+
+Additional cryptocurrencies may be available depending on current support. The checkout page displays all currently accepted options.
+
+[IMAGE PLACEHOLDER: Supported cryptocurrency logos]
+
+## Requirements
+
+To pay with cryptocurrency, you need:
+
+- A cryptocurrency wallet with sufficient balance
+- The ability to send transactions on the respective blockchain
+
+## How to pay with crypto
+
+<Steps>
+  <Step title="Select cryptocurrency at checkout">
+    When you reach the payment method selection step, choose **Cryptocurrency** from the available options.
+    
+    [IMAGE PLACEHOLDER: Crypto selection at checkout]
+  </Step>
+  
+  <Step title="Select your cryptocurrency">
+    Choose which cryptocurrency you want to pay with from the available options.
+  </Step>
+  
+  <Step title="View payment details">
+    The payment page displays:
+    
+    - A wallet address to send payment to
+    - A QR code for easy scanning
+    - The exact amount to send in the selected cryptocurrency
+    - A countdown timer for the payment window
+    
+    [IMAGE PLACEHOLDER: Crypto payment screen with address and QR]
+  </Step>
+  
+  <Step title="Send the payment">
+    From your cryptocurrency wallet:
+    
+    1. Copy the wallet address or scan the QR code
+    2. Enter the exact amount displayed
+    3. Send the transaction
+    
+    <Warning>
+    Send the exact amount shown. The amount is calculated at the current exchange rate and is only valid for the duration of the payment window. Sending a different amount may result in processing delays.
+    </Warning>
+  </Step>
+  
+  <Step title="Wait for confirmations">
+    After sending, the payment page tracks the transaction status:
+    
+    - **Detecting**: Waiting for the transaction to appear on the blockchain
+    - **Confirming**: Transaction detected, waiting for required confirmations
+    - **Confirmed**: Payment complete, order processing
+    
+    The number of required confirmations depends on the cryptocurrency:
+    - Bitcoin: 1 confirmation (approximately 10-60 minutes)
+    - Litecoin: 3 confirmations (approximately 7-15 minutes)
+  </Step>
+  
+  <Step title="View order confirmation">
+    Once the required confirmations are received, you are redirected to the order confirmation page.
+  </Step>
+</Steps>
+
+## Understanding confirmations
+
+Blockchain transactions require confirmations before being considered final. Each confirmation represents a new block added to the blockchain after your transaction.
+
+**Why confirmations matter**: Confirmations protect against double-spending and ensure the transaction cannot be reversed. More confirmations mean higher certainty that the payment is permanent.
+
+**Confirmation times**: The time for confirmations varies based on:
+- Network congestion
+- Transaction fees you paid
+- Block times for the specific cryptocurrency
+
+During high network congestion, confirmation times may be longer than usual.
+
+## Payment window
+
+Cryptocurrency payments have a time-limited payment window, typically 30-60 minutes. This window exists because:
+
+- Cryptocurrency prices fluctuate constantly
+- The payment amount is calculated at a specific exchange rate
+- Holding that rate indefinitely would create pricing discrepancies
+
+If the payment window expires before you send the transaction, you need to start a new order. The new order will have updated pricing based on current exchange rates.
+
+## Transaction fees
+
+When sending cryptocurrency, you pay a network transaction fee to miners/validators. This fee is separate from your order total and is paid directly to the blockchain network.
+
+Higher transaction fees typically result in faster confirmation times. If you need quick confirmation, consider using a higher fee setting in your wallet.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Transaction sent but not detected">
+    Transactions may take several minutes to appear on the blockchain depending on network conditions. If the payment page does not detect your transaction within 15 minutes, contact support with:
+    - Your transaction hash/ID
+    - The wallet address you sent to
+    - Your Right Spot order reference
+  </Accordion>
+  
+  <Accordion title="Sent wrong amount">
+    If you sent less than the required amount, the payment will not be processed automatically. Contact support with your transaction details to resolve the discrepancy.
+    
+    If you sent more than required, the excess amount is typically refunded after manual review.
+  </Accordion>
+  
+  <Accordion title="Payment window expired">
+    If your transaction was sent before the window expired but confirmations completed after, the payment should still be credited. If not, contact support with your transaction hash.
+    
+    If you did not send before the window expired, start a new order.
+  </Accordion>
+  
+  <Accordion title="Confirmations taking too long">
+    Low transaction fees can result in slow confirmations during network congestion. Options include:
+    - Wait for the transaction to eventually confirm
+    - Use a wallet that supports fee bumping (RBF for Bitcoin)
+    - Contact support if the delay is causing issues with your order
+  </Accordion>
+  
+  <Accordion title="Sent to wrong address">
+    If you sent cryptocurrency to an address other than the one displayed for your order, the payment cannot be recovered. Always verify the address before sending.
+  </Accordion>
+</AccordionGroup>
+
+## Refunds
+
+Refunds for cryptocurrency payments are returned in the original cryptocurrency to a wallet address you provide. Contact support to initiate a refund and provide your receiving wallet address.
+
+Refund amounts are based on the original cryptocurrency amount, not the fiat value at the time of refund. Cryptocurrency price changes between purchase and refund are your responsibility.
+
+---
+
+Learn about data security in [Security](/security/data-collection).
