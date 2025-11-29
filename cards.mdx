@@ -1,72 +1,96 @@
 ---
 title: "Credit and debit cards"
-description: "Pay for your Pokecoins using Visa, Mastercard, American Express, or Discover"
+description: "Pay for your Pokecoins using a credit or debit card through PayPal"
 ---
 
-Right Spot accepts major credit and debit cards through Stripe, a leading payment processor trusted by millions of businesses worldwide.
+You can pay for your Pokecoins using a credit or debit card through PayPal's secure checkout. This option is available even if you do not have a PayPal account.
 
 ## Accepted cards
+
+Through PayPal, you can pay with:
 
 - Visa
 - Mastercard
 - American Express
 - Discover
 
-Both credit and debit cards are accepted. Prepaid cards may also work depending on the issuer.
+Both credit and debit cards are accepted. Prepaid cards may also work depending on the issuer and region.
 
 [IMAGE PLACEHOLDER: Accepted card logos]
 
 ## How to pay with a card
 
 <Steps>
-  <Step title="Select card payment">
-    When you reach the payment method selection step, choose **Credit/Debit Card** from the available options.
+  <Step title="Select PayPal at checkout">
+    When you reach the payment method selection step, choose **PayPal** from the available options.
     
-    [IMAGE PLACEHOLDER: Card selection at checkout]
+    [IMAGE PLACEHOLDER: PayPal selection at checkout]
+  </Step>
+  
+  <Step title="Redirect to PayPal">
+    You are redirected to PayPal's secure checkout page. This is PayPal's official website where all payment processing occurs.
+    
+    [IMAGE PLACEHOLDER: PayPal checkout page]
+  </Step>
+  
+  <Step title="Select card payment option">
+    On the PayPal checkout page, look for the option to pay with a debit or credit card. This is typically displayed as "Pay with Debit or Credit Card" or shown as card icons below the login form.
+    
+    Click this option to proceed without logging into a PayPal account.
+    
+    [IMAGE PLACEHOLDER: PayPal page showing card payment option]
   </Step>
   
   <Step title="Enter card details">
-    The secure payment form appears directly on the page. Enter your card information:
+    PayPal displays a secure form for your card information:
     
     - Card number
     - Expiration date
-    - CVC (security code)
-    - Billing postal code (if requested)
+    - Security code (CVV/CVC)
+    - Billing address
     
-    [IMAGE PLACEHOLDER: Card entry form]
+    Enter your card details directly into PayPal's form.
+    
+    [IMAGE PLACEHOLDER: PayPal card entry form]
   </Step>
   
-  <Step title="Confirm payment">
-    Click **Pay** to process your card. The page displays a processing indicator while the transaction is verified.
-  </Step>
-  
-  <Step title="Complete verification if required">
-    Some cards require additional verification through 3D Secure (Verified by Visa, Mastercard SecureCode, etc.). If prompted, complete the verification step with your bank.
-    
-    [IMAGE PLACEHOLDER: 3D Secure verification]
+  <Step title="Complete payment">
+    Review the payment amount and click the button to confirm payment. PayPal processes the transaction and redirects you back to Right Spot.
   </Step>
   
   <Step title="View confirmation">
-    After successful payment, the confirmation page displays your order status and delivery progress.
+    After successful payment, you are returned to Right Spot's confirmation page showing your order status and delivery progress.
   </Step>
 </Steps>
 
+## Why cards are processed through PayPal
+
+All card payments on Right Spot are processed through PayPal's payment gateway. This provides several benefits:
+
+**Established security**: PayPal has processed payments for over two decades and handles billions of dollars in transactions. Their security infrastructure is world-class.
+
+**No card data on our servers**: Your card information is entered directly on PayPal's website, not on Right Spot. We never see, handle, or store your card details.
+
+**Buyer protection**: PayPal offers buyer protection programs that can help resolve disputes if issues arise.
+
+**Wide card acceptance**: PayPal accepts cards from most countries and handles currency conversion automatically.
+
 ## Card security
 
-Your card information is handled entirely by Stripe. When you enter your card details:
+When you enter your card details on PayPal's checkout page:
 
-1. The information is encrypted in your browser
-2. Sent directly to Stripe's secure servers
-3. Verified and processed by Stripe
-4. Right Spot receives only confirmation of payment
+1. You are on PayPal's secure website (check the URL shows paypal.com)
+2. Your card information is encrypted and sent directly to PayPal
+3. PayPal processes the payment with your card issuer
+4. Right Spot receives only a confirmation that payment was successful
 
-**Right Spot never has access to your full card number, expiration date, or CVC.** We receive only a token that represents the transaction, not your actual card details.
+**Right Spot never receives your card number, expiration date, or security code.** We only receive a transaction ID confirming the payment was completed.
 
-See [Payment security](/security/payment-security) for more information about how your financial data is protected.
+See [Payment security](/security/payment-security) for detailed information about how your financial data is protected.
 
 ## Processing time
 
-Card payments typically process within seconds. You see the result immediately after clicking Pay (or after completing 3D Secure verification if required).
+Card payments through PayPal typically process within seconds. You see the result immediately after confirming payment on PayPal's page.
 
 ## Why cards may be declined
 
@@ -74,39 +98,24 @@ Cards can be declined for several reasons:
 
 **Insufficient funds**: The card does not have enough available credit or balance.
 
-**Fraud prevention**: Your bank flagged the transaction as potentially fraudulent. This is common for first-time purchases from new merchants.
+**Bank restrictions**: Your bank may block transactions to PayPal or international transactions.
 
-**Card restrictions**: Some cards have restrictions on online purchases or international transactions.
+**Incorrect details**: The card number, expiration date, or security code was entered incorrectly.
 
-**Incorrect details**: The card number, expiration date, or CVC was entered incorrectly.
+**Card not supported**: Some card types or issuers may not be accepted by PayPal in certain regions.
 
-**Card expired**: The card has passed its expiration date.
+**Fraud prevention**: The bank flagged the transaction as potentially fraudulent.
 
 ### If your card is declined
 
 1. Verify all card details are entered correctly
-2. Check with your bank if there are any holds or restrictions
+2. Check with your bank if there are any holds or restrictions on your card
 3. Try a different card
-4. Use an alternative payment method
-
-## 3D Secure
-
-3D Secure is an additional security layer that some banks require. When triggered, you are asked to verify the transaction through your bank's authentication system.
-
-This may involve:
-- Entering a one-time code sent to your phone
-- Confirming through your banking app
-- Answering security questions
-
-If 3D Secure verification fails, the payment is not processed. You can retry or use a different payment method.
-
-## Saved cards
-
-Right Spot does not store your card details. Each payment requires entering your card information. This is a security measure—since we never store card data, it cannot be compromised even in the unlikely event of a security breach.
+4. Use an alternative payment method such as PayPal balance or UPI
 
 ## Refunds
 
-Refunds for card payments are returned to the original card. Processing time varies by bank but typically takes 5-10 business days to appear on your statement.
+Refunds for card payments made through PayPal are returned to the original card. Processing time varies by bank but typically takes 5-10 business days to appear on your statement.
 
 ---
 
