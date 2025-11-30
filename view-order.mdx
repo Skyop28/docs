@@ -1,98 +1,104 @@
 ---
 title: "View your order"
-description: "Access order details and track delivery progress"
+description: "Access and understand your order details page"
 ---
 
-After placing an order, you can track its progress through your dashboard. This page explains how to access order details and understand the information displayed.
+The order details page shows all information about a specific order including status, tracking timeline, and payment details.
 
-## Finding your order
+## Accessing the order page
 
-There are several ways to access your order details:
+There are three ways to access your order:
 
-**From the confirmation page**: After completing payment, the confirmation page displays your order details and delivery status. Bookmark this page or note the order reference number for future access.
+**From the confirmation page**: After payment completes, you see the confirmation page. Click the "Track Order" button to go to the order details page.
 
-**From the dashboard**: Navigate to **Orders** in the sidebar to see all your orders. Click any order to view its details.
+![IMAGE PLACEHOLDER: Confirmation page with Track Order button](https://ik.imagekit.io/awnish90/image17.png)
 
-**From email**: Order confirmation emails include a link to view your order details directly.
+**From email**: The payment confirmation email includes a "Track Order" button that takes you to your dashboard where you can view your orders.
 
-**Using the order reference**: If you have your order reference number (formatted as `ORD-XXXXXXXXXX`), you can search for it in the Orders section.
+**From dashboard**: Go to **Orders** in the sidebar, click any order to view its details.
 
-## Order details page
+You must be logged in to view your orders.
 
-[IMAGE PLACEHOLDER: Order details view]
+![IMAGE PLACEHOLDER: Full order details page](https://ik.imagekit.io/awnish90/image19.png)
 
-The order details page provides comprehensive information about your purchase.
+![image23](https://ik.imagekit.io/awnish90/image20.png)
+
+---
+
+## Page layout
+
+### Status header
+
+The top section shows:
+
+- **Status badge**: Current order state (PROCESSING, DELIVERED, DELAYED, etc.)
+- **Last updated**: When the status was last changed
+- **Progress bar**: Visual progress through Placed → Processing → Delivered
+
+![IMAGE PLACEHOLDER: Status header with progress bar](https://ik.imagekit.io/awnish90/image24.png)
+
+### Tracking timeline
+
+Shows all status updates in chronological order. Each entry includes:
+
+- Status name
+- Timestamp (date and time)
+- Message describing the update
+
+For partial deliveries, shows amount delivered vs total. For delays, shows new expected date.
+
+![IMAGE PLACEHOLDER: Tracking timeline with updates](https://ik.imagekit.io/awnish90/image21.png)
+
+### Order information
+
+Two-column layout with:
+
+**Identity Details**
+- Order number (with copy button)
+- Discord username
+- Email address
+
+**Market Details**
+- Market ID(s) where coins are delivered
+- Amount per market ID
+
+**Payment Details**
+- Payment method
+- Payment status
+- Payment ID (with copy button)
+
+**Timestamps**
+- Order placed date/time
+- Last updated date/time
+- Expected delivery (for pre-orders)
+
+![IMAGE PLACEHOLDER: Order information section](https://ik.imagekit.io/awnish90/image26.png)
 
 ### Order summary
 
-The top section displays key order information:
+Receipt-style breakdown:
 
-- **Reference number**: Unique identifier for this order
-- **Status**: Current state of the order
-- **Pokecoin amount**: Quantity purchased
-- **Total paid**: Payment amount and currency
-- **Order date**: When the order was placed
+- Pokecoin amount and type (Instant or Pre-Order)
+- Price per million
+- Processing fee
+- Total paid
+- Estimated delivery info
 
-### Delivery information
+![IMAGE PLACEHOLDER: Order summary card](https://ik.imagekit.io/awnish90/image26.png)
 
-Details about where and when your Pokecoins are delivered:
+### Support section
 
-- **Market ID**: The destination for your Pokecoins
-- **Delivery status**: Whether delivery is pending, in progress, or complete
-- **Delivery timestamp**: When the Pokecoins were sent (for completed deliveries)
+Quick links to:
 
-### Payment information
-
-Transaction details from the payment:
-
-- **Payment method**: How you paid
-- **Payment status**: Whether payment was received
-- **Transaction reference**: Identifier from the payment processor
-
-### Order timeline
-
-A chronological list of all events related to your order:
-
-- Order placed
-- Payment initiated
-- Payment confirmed
-- Processing started
-- Delivery attempted
-- Delivery confirmed
-
-Each event includes a timestamp showing exactly when it occurred. This timeline is useful for understanding the order lifecycle and identifying any delays.
-
-## Real-time updates
-
-The order details page updates automatically as your order progresses. You do not need to refresh the page manually—status changes appear within seconds of occurring.
-
-For instant orders, you will typically see the order progress from "Processing" to "Delivered" within seconds after payment confirmation.
-
-## Order actions
-
-Depending on the order status, different actions are available:
-
-**Pending orders**:
-- Complete payment (if not finished)
-- Cancel order (before payment)
-
-**Delivered orders**:
-- View delivery confirmation
-- Report an issue
-
-**Failed orders**:
-- View failure reason
-- Retry order
-- Contact support
-
-## Sharing order information
-
-If you need to share order information with support or for your records:
-
-- Copy the order reference number for quick identification
-- Use the print or export option to save order details
-- Take a screenshot of the order timeline for complete documentation
+- Contact Support
+- FAQs
 
 ---
 
-Learn about the different order statuses in [Tracking statuses](/statuses).
+## Real-time updates
+
+The page polls for updates every 5 seconds. Status changes appear automatically without refreshing.
+
+---
+
+Learn about the different statuses in [Tracking statuses](/statuses).
