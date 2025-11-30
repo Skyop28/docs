@@ -1,141 +1,77 @@
 ---
-title: "Tracking status"
+title: "Tracking statuses"
 description: "Understand the meaning of each order status"
 ---
 
-Orders progress through several statuses from placement to completion. This page explains what each status means and what to expect at each stage.
+Orders progress through several statuses from placement to completion. This page explains what each status means.
 
-## Status overview
+## Order statuses
 
 | Status | Meaning |
 |--------|---------|
-| Pending Payment | Order created, awaiting payment |
-| Payment Processing | Payment initiated, being verified |
-| Payment Confirmed | Payment received and verified |
-| Processing | Order being prepared for delivery |
-| Delivering | Pokecoins being sent to market |
-| Delivered | Order complete, Pokecoins received |
-| Failed | An error occurred, action required |
-| Canceled | Order was canceled before completion |
-
-## Detailed status descriptions
-
-### Pending Payment
-
-Your order has been created but payment has not been received. This status appears when:
-
-- You started checkout but did not complete payment
-- You selected a payment method but closed the payment page
-- Payment is awaiting confirmation from the provider
-
-**What to do**: Return to your dashboard and complete the payment process. Orders in this status expire after 30 minutes if payment is not received.
-
-### Payment Processing
-
-Your payment has been initiated and is being verified. This is a transitional status that typically lasts only a few seconds for most payment methods.
-
-For some payment methods, this status may persist longer:
-
-- **Crypto payments**: Waiting for blockchain confirmations
-- **Bank transfers**: Waiting for bank verification
-- **Manual verification**: Rare cases requiring additional checks
-
-**What to do**: Wait for the payment to be verified. Do not submit another payment while this status is active.
-
-### Payment Confirmed
-
-Your payment has been received and verified. The order will now proceed to processing.
-
-This status confirms:
-- Funds have been received
-- Payment amount matches the order total
-- No issues were detected with the transaction
-
-**What to do**: No action required. The order will progress to processing automatically.
-
-### Processing
-
-Your order is being prepared for delivery. During this phase:
-
-- The system verifies your market ID
-- Pokecoins are allocated from inventory
-- The delivery transaction is prepared
-
-For instant orders, processing typically completes within seconds. For pre-orders, processing begins when stock becomes available.
-
-**What to do**: Wait for delivery to complete. Monitor the order page for updates.
-
-### Delivering
-
-The delivery transaction is in progress. Your Pokecoins are being sent to your market ID through the Poketwo system.
-
-This status is brief for most orders, lasting only the time needed to execute the market transaction.
-
-**What to do**: Wait for delivery confirmation. Do not attempt to place another order for the same market ID until this delivery completes.
-
-### Delivered
-
-Your order is complete. The Pokecoins have been successfully sent to your market ID.
-
-The order details page shows:
-- Delivery timestamp
-- Confirmation from the Poketwo system
-- Final order summary
-
-**What to do**: Verify the Pokecoins in your Poketwo market using `@Poketwo market info`. If the balance is incorrect, contact support.
-
-<Check>
-A delivered status means the transaction was successfully executed. Your Pokecoins should be available in your market immediately.
-</Check>
-
-### Failed
-
-An error prevented the order from completing. Common causes include:
-
-- Invalid market ID
-- Poketwo system unavailable
-- Delivery transaction rejected
-
-The order details page displays the specific reason for failure.
-
-**What to do**: Review the failure reason. Depending on the cause, you may be able to retry the order or you may need to contact support. Failed orders that cannot be retried are eligible for refund.
-
-### Canceled
-
-The order was canceled before completion. Cancellation can occur:
-
-- By your request (before payment)
-- Automatically (payment timeout)
-- By the system (detected issues)
-
-**What to do**: If you still want to purchase Pokecoins, place a new order. Refunds for canceled orders are processed according to the refund policy.
-
-## Status progression
-
-A typical successful order follows this progression:
-
-```
-Pending Payment → Payment Processing → Payment Confirmed → Processing → Delivering → Delivered
-```
-
-Each transition triggers a notification and updates the order timeline.
-
-## Troubleshooting stuck orders
-
-<AccordionGroup>
-  <Accordion title="Order stuck on Pending Payment">
-    The payment was not received. Either complete the payment from your dashboard or allow the order to expire and place a new order.
-  </Accordion>
-  
-  <Accordion title="Order stuck on Payment Processing">
-    For card and PayPal payments, this usually resolves within minutes. For crypto, wait for the required blockchain confirmations. If the status persists beyond 30 minutes, contact support with your transaction receipt.
-  </Accordion>
-  
-  <Accordion title="Order stuck on Processing">
-    Processing delays can occur during high-volume periods. If an instant order remains in processing for more than 5 minutes, contact support.
-  </Accordion>
-</AccordionGroup>
+| Processing | Order is being processed |
+| Delivered (Complete) | Order fully delivered |
+| Delayed | Delivery has been delayed |
+| Partially Delivered | Part of your order has been delivered |
+| Failed / Cancelled | Order could not be completed |
 
 ---
 
-Explore available payment options in [Payment methods](/payments/overview).
+## Normal progression
+
+A successful order follows this path:
+
+```
+Order Placed → Processing → Completed
+```
+
+The progress bar on your order page shows these three stages: **Placed → Processing → Delivered**.
+
+For instant orders, this usually completes within seconds. For pre-orders, processing begins when stock is available.
+
+---
+
+## Status descriptions
+
+### Processing
+
+Your order is being fulfilled. For instant orders, this is brief. For pre-orders, this may take longer depending on your position in the queue, often a few days.
+
+### Delivered (Complete)
+
+Your order is completed. All Pokecoins have been delivered to your market ID.
+
+### Delayed
+
+Your order delivery has been delayed. The tracking timeline shows the new expected delivery date.
+
+You will receive an email notification when an order is delayed.
+
+### Partially Delivered
+
+Part of your order has been delivered. This can happen with large pre-orders that are fulfilled in batches.
+
+The tracking timeline shows:
+- Amount delivered so far
+- Remaining amount
+
+### Failed / Cancelled
+
+The order could not be completed. Check the tracking timeline for the reason.
+
+Contact support if you need assistance.
+
+---
+
+## Tracking timeline
+
+Each order has a tracking timeline that shows all status updates with timestamps and messages. Special updates like partial deliveries and delays include additional information:
+
+- **Partial delivery**: Shows amount delivered vs total
+- **Delay**: Shows new expected delivery date
+
+![order status](https://ik.imagekit.io/awnish90/image21.png)
+
+---
+
+Return to [View your order](/tracking/view-order) to learn about the order details page.
